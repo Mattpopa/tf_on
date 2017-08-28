@@ -13,8 +13,8 @@ module "webcluster" {
 resource "aws_security_group_rule" "allow_tmp_testing" {
     type = "ingress"
     security_group_id = "${module.webcluster.elb_security_group_id}"
-        from_port = 99999
-        to_port = 99999
+        from_port = 9999
+        to_port = 9999
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
 }
