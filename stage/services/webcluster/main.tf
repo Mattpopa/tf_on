@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "webcluster" {
-    source = "../../../../modules/services/webcluster"
+    source = "git::git@github.com:Mattpopa/tf_mod.git//services/webcluster?ref=v1.0.0"
     cluster_name = "stage"
     instance_type = "t2.micro"
     min_size = 2
