@@ -3,10 +3,12 @@ provider "aws" {
 }
 
 module "webcluster" {
-    source = "git::git@github.com:Mattpopa/tf_mod.git//services/webcluster?ref=v1.0.0"
+#    source = "git::git@github.com:Mattpopa/tf_mod.git//services/webcluster?ref=v1.0.0"
+    source = "../../../../modules/services/webcluster"
     cluster_name = "prod"
     instance_type = "t2.micro"
     min_size = 2
     max_size = 4
+    desired = 2
     enable_autoscaling = true
 }
