@@ -11,6 +11,7 @@ module "webcluster" {
     max_size = 2
     desired = 2
     enable_autoscaling = false
+    user_data_v2 = true
 }
 
 resource "aws_security_group_rule" "allow_tmp_testing" {

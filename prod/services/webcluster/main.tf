@@ -11,4 +11,5 @@ module "webcluster" {
     max_size = 4
     desired = 2
     enable_autoscaling = true
+    user_data_v2 = true
 }
