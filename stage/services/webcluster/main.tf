@@ -11,15 +11,14 @@ module "webcluster" {
     max_size = 2
     desired = 2
     enable_autoscaling = false
-    user_data_v2 = true
+    app_data_v2 = true
 }
 
-resource "aws_security_group_rule" "allow_tmp_testing" {
+resource "aws_security_group_rule" "allow_apps" {
     type = "ingress"
     security_group_id = "${module.webcluster.elb_security_group_id}"
-        from_port = 9999
-        to_port = 9999
+        from_port = 9090 
+        to_port = 9090
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
 }
-
