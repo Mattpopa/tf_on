@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket  = "wip-tf-state-080817"
-    key     = "wip-tf-state"
+    bucket  = "digital-tf-state"
+    key     = "tf-state-s3"
     region  = "eu-central-1"
     encrypt = true
-    profile = "cyclones-dev"
+    profile = "digit-all"
   }
 }
